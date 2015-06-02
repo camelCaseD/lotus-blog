@@ -1,0 +1,10 @@
+<% posts.each do |post| %>
+  <h1><%= post.title %></h1>
+  <p>
+    <%= post.body %>
+  </p>
+  <%= link_delete(post.id) %> | <%= link_edit(post.id) %>
+  <hr />
+<% end %>
+
+<%= link_create %>
