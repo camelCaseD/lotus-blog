@@ -1,3 +1,6 @@
 # Lotus Blog
 
-This is a blog built using lotus. Was used for me when playing around with lotus.
+This is a blog built using [lotus](http://lotusrb.org).
+
+---
+Take a look at the various branches to see the steps I took to make the blog.
