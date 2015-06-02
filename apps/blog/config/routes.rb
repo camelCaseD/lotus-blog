@@ -10,9 +10,9 @@ get '/', to: 'posts#index'
 get '/posts/new', to: 'posts#create', as: :posts_create
 post '/posts/new', to: 'posts#insert', as: :posts_insert
 
-get '/posts/delete/:id', to: 'posts#delete', as: :posts_delete
+delete '/posts/delete/:id', to: 'posts#delete', as: :posts_delete
 
 get '/posts/edit/:id', to: 'posts#edit', as: :posts_edit
-post '/posts/edit/:id', to: 'posts#update', as: :posts_update
+patch '/posts/edit/:id', to: 'posts#update', as: :posts_update
 
 get '/posts/:id', to: 'posts#show', as: :posts_show

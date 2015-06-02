@@ -1,0 +1,15 @@
+form {
+  display: inline-block;
+}
+
+.faux-link {
+  background-color: white;
+  border: 0;
+  font-size: 16px;
+  text-decoration: underline;
+  font-family: Times;
+  color: rgb(0, 0, 238);
+  cursor: pointer;
+  padding: 0;
+  outline: 0;
+}
