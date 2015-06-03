@@ -1,11 +1,8 @@
 module Blog::Controllers::Posts
-  class Index
+  class Create
     include Blog::Action
 
-    expose :posts
-
     def call(params)
-      @posts = PostRepository.all
     end
   end
 end
