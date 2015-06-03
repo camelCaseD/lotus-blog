@@ -3,10 +3,6 @@ module Blog::Views::Posts
     include Blog::View
     include Lotus::Helpers
 
-    def posts
-      PostRepository.all
-    end
-
     def link_create
       _raw %(<a href="#{routes.path(:posts_create)}">Create Post</a>)
     end
@@ -31,10 +27,6 @@ module Blog::Views::Posts
   class Edit
     include Blog::View
 
-    def post
-      PostRepository.find(locals[:params][:id])
-    end
-
     def edit_action
       routes.path(:posts_update, id: locals[:params][:id])
     end
@@ -42,10 +34,6 @@ module Blog::Views::Posts
 
   class Show
     include Blog::View
-
-    def post
-      PostRepository.find(locals[:params][:id])
-    end
 
     def link_delete(id)
       _raw %(<form action="#{routes.path(:posts_delete, id: id)}" method="post"><input type="hidden" name="_method" value="delete" /><input class="faux-link" type="submit" value="Delete" /></form>)

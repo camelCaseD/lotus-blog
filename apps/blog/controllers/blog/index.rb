@@ -2,8 +2,10 @@ module Blog::Controllers::Posts
   class Index
     include Blog::Action
 
-    def call(params)
+    expose :posts
 
+    def call(params)
+      @posts = PostRepository.all
     end
   end
 
@@ -55,8 +57,12 @@ module Blog::Controllers::Posts
       param :id, presence: true, type: Integer
     end
 
+    expose :post
+
     def call(params)
       redirect_to '/' unless params.valid?
+
+      @post = PostRepository.find(params.id)
     end
   end
 
@@ -87,8 +93,12 @@ module Blog::Controllers::Posts
       param :id, presence: true, type: Integer
     end
 
+    expose :post
+
     def call(params)
       redirect_to '/' unless params.valid?
+
+      @post = PostRepository.find(params.id)
     end
   end
 end
