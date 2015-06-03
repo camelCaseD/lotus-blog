@@ -1,11 +1,6 @@
 module Blog::Views::Posts
-  class Index
+  class Show
     include Blog::View
-    include Lotus::Helpers
-
-    def link_create
-      _raw %(<a href="#{routes.path(:posts_create)}">Create Post</a>)
-    end
 
     def link_delete(id)
       _raw %(<form action="#{routes.path(:posts_delete, id: id)}" method="post"><input type="hidden" name="_method" value="delete" /><input class="faux-link" type="submit" value="Delete" /></form>)
@@ -13,10 +8,6 @@ module Blog::Views::Posts
 
     def link_edit(id)
       _raw %(<a href="#{routes.path(:posts_edit, id: id)}">Edit Post</a>)
-    end
-
-    def path_show(id)
-      routes.path(:posts_show, id: id)
     end
   end
 end
